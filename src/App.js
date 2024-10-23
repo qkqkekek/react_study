@@ -1,6 +1,10 @@
 import './App.css';
-import FoodContainer from './docs/map/basic/FoodContainer';
+import CheckInput from './docs/ref/CheckInput';
 
+// import Check from './docs/ref/Check';
+// import Name from './docs/ref/Name';
+// import UserContainer from './docs/map/expert/UserContainer';
+// import FoodContainer from './docs/map/basic/FoodContainer';
 // import Colors from './docs/state/basic/Colors';
 // import Name from './docs/state/basic/Name';
 // import Sound from './docs/state/basic/Sound';
@@ -14,7 +18,7 @@ import FoodContainer from './docs/map/basic/FoodContainer';
 function App() {
   return (
    <>
-    <FoodContainer />
+    <CheckInput />
    </>
   );
 }
