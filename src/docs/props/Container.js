@@ -15,7 +15,7 @@ const Container = () => {
       
            
       <Component2 printName={printName} >
-        <span>회원입니다😄</span>
+        <span>회원입ㅇ니다😄</span>
       </Component2>
 
     </div>

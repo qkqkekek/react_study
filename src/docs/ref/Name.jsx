@@ -7,6 +7,7 @@ const Name = () => {
 
   const [result, setResult] = useState();
   const inputRef = useRef();
+  
   const onChangeToInput = (e) => {
   console.log(e.target.value)
   setResult(e.target.value);
