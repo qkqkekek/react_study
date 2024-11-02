@@ -1,10 +1,28 @@
-import './App.css';
-import UserContainer from './docs/map/expert/UserContainer';
-import Container from './docs/props/Container';
-import Checkbox from './docs/ref/expert/Checkbox';
+// 스타일 초기화
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from './global/globalStyle'; 
+import theme from './global/theme';
 
 
 
+
+import Styled03 from './pages/docs/_component/Styled03';
+
+
+
+
+
+
+
+
+// import Styled04 from './pages/docs/_component/Styled04';
+// import Styled02 from './pages/docs/_component/Styled02';
+// import Styled01 from './pages/docs/_component/Styled01';
+// import ProductContainer from './docs/life-cycle/function/memoization/ProductContainer';
+// import SideEffectMount from './docs/life-cycle/function/SideEffectMount';
+// import InfiniteLoop from './docs/life-cycle/class/InfiniteLoop';
+// import SideEffect from './docs/life-cycle/function/SideEffect';
+// import LifeCycleContainer from './docs/life-cycle/class/LifeCycleContainer';
 // import Foodcontainer from './docs/ref/expert/Foodcontainer';
 // import Checkbox from './docs/ref/expert/Checkbox';
 // import CheckInput from './docs/ref/CheckInput';
@@ -25,8 +43,16 @@ import Checkbox from './docs/ref/expert/Checkbox';
 function App() {
   return (
    <>
-   
-    <Checkbox/>
+    {/* theme.js 공통적용 */}
+    <ThemeProvider theme={theme}>
+
+      {/* 스타일 초기화 */}
+      <GlobalStyle />
+      
+      <Styled03 />
+
+    </ThemeProvider>
+
    </>
   );
 }

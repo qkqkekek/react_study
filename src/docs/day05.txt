@@ -1,0 +1,60 @@
+리액트 라이프 사이클
+-페이지에 컴포넌트가 생성되고, 수정되고, 사라지는 순서를 의미한다.
+React에서 클래스 컴포넌트를 사용하면 9개 메서드를 통해 작업의 흐름을 알 수 있다.
+
+
+전체적인 흐름
+-마운트 > 업데이트 > 언마운트
+
+마운드(Mount)
+-페이지에 컴포넌트가 나타나는 것
+-constructor : 새로운 컴포넌트를 생성할 떄 마다 실행
+-getDreivedStateFormProps : props를 state에 넣을 떄 사용한다.
+컴포넌트가 마운트 될때와 업데이트 될때 실행된다.
+-render : 준비해놓은 UI를 랜더링할 때 사용한다.
+-componentDidMount : 페이지에 컴포넌트가 나타난 직후 실행된다.
+
+업데이트(update)
+-getDrevedStateFromProps
+-sholudComponentUpdate : true를 리턴시에만 다음 라이프사이클 메서드가 실행되도록 하기 떄문에 반드시 리턴 값이 필요하다.
+-render
+-getSnapshotBeforeUpdate : 컴포넌트가 업데이트 후 직전 값(snapshot)을 가져와서 제어하는 메세드이다.
+-componentDidUpdate
+-컴포넌트 업데이트 직후에 실행
+
+언마운트(unmount)
+-ComponentWillUnmount
+
+
+
+--------------------------
+사이드 이팩트(side effect)
+참초 투명성
+-입력을 받아서 입력받은 그대로를 출력하는 함수를 참조 투명하다고 하며 순수 함수(Pure Funtion) 이라고 한다. 
+하지만 입력 받았을 때 다른 결과로 출력하거나 외부 함수에 영향을 끼치는 함수를 참조 불투명하다고 한다.
+이렇게 순수 함수가 아닌 함수에서 side-effect가 발생한다.
+
+-리액트는 모든 함수를 순수 함수로 유지할 것을 궈장하고 있으며,
+이로 인해 컴포넌트 재사용이 좋아지고 오류 검사 및 테스트도 좋아진다..
+
+ex)
+const Component({data}) {
+  return <p>{data}</p>
+}
+
+
+사이드 이팩트를 발생할 수 있는 함수는 아래와 같다
+1. 서버와의 통신(fetch, axios)
+2. setTimeout, setinterval 등 종료 시점을 예측하기 어려운 함수 등등
+
+useEffect
+-side-effect를 따로 관리하여 컴포넌트가 최대한 순수 함수로 유지할 수 있도록 도와주는 함수
+
+-useEffect()는 랜더링이 모두 끝난 다음에 실행된다
+
+
+useEffect 가용범위
+-useEffect( () => {} )  :  랜더링 될 때 마다 실행
+-useEffect( () => {}, [] )  :  최초 랜더링(마운트)할 떄만 실행
+-useEffect( () => {}, [state] ) : 특정 컴포넌트 변경 시 실행'
+

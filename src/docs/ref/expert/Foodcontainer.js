@@ -5,8 +5,11 @@ import React, { useRef, useState } from 'react';
 const FoodContainer = () => {
   
   const [foods, setFoods] = useState([]);
+  const [checked, setChecked] = useState([]);
+
   const inputRef = useRef([]);
   
+  // 상품 추가
   const onClickToAddFood = () => {
       setFoods(
         foods.concat({  // 객체로 변환
@@ -14,12 +17,24 @@ const FoodContainer = () => {
           eng : inputRef.current[1].value,
         })
       )
+      setChecked(checked.concat(false));
   }
 
-  const foodList = foods.map(({kor, eng}) => {
+  const onChangeCheckBox = (i) => {
+    checked.splice(i, 1, !checked[i]);
+    setChecked(checked.concat());
+  }
+
+   // 상품 삭제
+  const onClickToRemoveFood = () => {
+    setFoods(foods.filter((food, i) => !checked[i]))
+    setChecked(new Array(foods.length).fill(false))
+  }
+
+  const foodList = foods.map(({kor, eng}, i) => {
     return (
       <li>
-        <input type="checkbox" />
+        <input type="checkbox" checked={ checked[i] } onChange={() => onChangeCheckBox(i)}/>
         {`${kor} (${eng})`}
       </li>
     )
@@ -33,7 +48,7 @@ const FoodContainer = () => {
       </div>
       <div>
         <button onClick={onClickToAddFood}>추가</button>
-        <button>삭제</button>
+        <button onClick={onClickToRemoveFood}>삭제</button>
       </div>
       <div>
         {foodList}
