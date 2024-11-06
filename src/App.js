@@ -6,7 +6,7 @@ import theme from './global/theme';
 
 
 
-import Styled03 from './pages/docs/_component/Styled03';
+import ParentContainer from './docs/context/normal/ParentContainer';
 
 
 
@@ -15,6 +15,9 @@ import Styled03 from './pages/docs/_component/Styled03';
 
 
 
+// import CharContainer from './docs/context/basic/CharContainer';
+// import Styled05 from './pages/docs/_component/Styled05';
+// import Styled03 from './pages/docs/_component/Styled03';
 // import Styled04 from './pages/docs/_component/Styled04';
 // import Styled02 from './pages/docs/_component/Styled02';
 // import Styled01 from './pages/docs/_component/Styled01';
@@ -45,11 +48,11 @@ function App() {
    <>
     {/* theme.js 공통적용 */}
     <ThemeProvider theme={theme}>
-
       {/* 스타일 초기화 */}
       <GlobalStyle />
       
-      <Styled03 />
+
+      <ParentContainer />
 
     </ThemeProvider>
 
