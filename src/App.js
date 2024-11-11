@@ -6,7 +6,7 @@ import theme from './global/theme';
 
 
 
-import ParentContainer from './docs/context/normal/ParentContainer';
+import FontContainer from './pages/docs/font/FontContainer';
 
 
 
@@ -15,6 +15,9 @@ import ParentContainer from './docs/context/normal/ParentContainer';
 
 
 
+// import CountContainer from './pages/docs/count/CountContainer';
+// import AnimalsContainer from './docs/context/expert/AnimalsContainer';
+// import ParentContainer from './docs/context/normal/ParentContainer';
 // import CharContainer from './docs/context/basic/CharContainer';
 // import Styled05 from './pages/docs/_component/Styled05';
 // import Styled03 from './pages/docs/_component/Styled03';
@@ -52,7 +55,7 @@ function App() {
       <GlobalStyle />
       
 
-      <ParentContainer />
+      <FontContainer />
 
     </ThemeProvider>
 
