@@ -1,5 +1,4 @@
-import { createAction, handleActions } from 'redux-actions';
-
+import { createAction, handleActions } from "redux-actions";
 
 // type 생성
 const INCREASE = "count/INCREASE";
@@ -11,8 +10,8 @@ export const decrease = createAction(DECREASE);
 
 // state 초기화 생성
 const initialState = {
-  number : 0
-}
+  number: 0,
+};
 
 // reducer 생성
 // const reducer = (state, action) => {
@@ -28,9 +27,16 @@ const initialState = {
 //   }
 // }
 
-const count = handleActions({
-  [INCREASE] : (state, action) => ({number : state.number + 1 + parseInt(action.payload) }),
-  [DECREASE] : (state, action) => ({number : state.number - 1 + Number(action.payload) })
-}, initialState)
+const count = handleActions(
+  {
+    [INCREASE]: (state, action) => ({
+      number: state.number + 1 + parseInt(action.payload),
+    }),
+    [DECREASE]: (state, action) => ({
+      number: state.number - 1 + Number(action.payload),
+    }),
+  },
+  initialState
+);
 
 export default count;
